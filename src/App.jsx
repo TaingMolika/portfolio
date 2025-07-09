@@ -1,6 +1,6 @@
 import { Home, Route } from "lucide-react"
 import { BrowserRouter } from "react-router-dom"
-import { Home } from "./pages/Home"
+import { HomePage } from "./pages/HomePage"
 import { NotFound } from "./pages/NotFound"
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Router>
-          <Router index_element = {<Home />} />
+          <Router index_element = {<HomePage />} />
           <Router path="*" element = {<NotFound />} />
         </Router>
       </BrowserRouter>
