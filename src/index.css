@@ -1,0 +1,81 @@
+/* @tailwind base;
+@tailwind utilities;
+@tailwind utilities; */
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+  }
+}
+
+@theme inline{
+  --color-brand: #c91b68;
+  --color-foreground: #ffffff
+}
+
+@layer components {
+  .night {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(45deg);
+  }
+
+  .shooting_star {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+    animation: tail 2000ms ease-in-out infinite, shooting 2000ms ease-in-out infinite;
+  }
+
+  .shooting_star::before,
+  .shooting_star::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 3px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    border-radius: 100%;
+    /* animation: shining 2000ms ease-in-out infinite; */
+  }
+
+  .shooting_star::before {
+    transform: translateX(50%) rotateZ(45deg);
+  }
+
+  .shooting_star::after {
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+}
+
+@keyframes tail {
+  0% { width: 0; }
+  30% { width: 100px; }
+  100% { width: 0; }
+}
+
+@keyframes shining {
+  0% { width: 0; }
+  50% { width: 30px; }
+  100% { width: 0; }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
