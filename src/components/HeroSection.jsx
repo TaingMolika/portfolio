@@ -25,7 +25,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-center text-sm sm:text-base md:text-lg lg:text-lg text-muted-foreground max-w-2xl mx-auto">
             With a background in Computer Science, I’ve grown a strong interest in everything data—how it moves, how it tells stories, and how it powers AI. 
             I’m always learning, experimenting, and building. If you're into tech, data, or just curious what I'm up to, take a look around.
           </p>
